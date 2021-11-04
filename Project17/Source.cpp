@@ -2,36 +2,36 @@
 using namespace std;
 
 float sum(float num1, float num2, int choise) {
-	cout << "Îòâåò: " << num1 << " + " << num2 << " = " << "\x1b[92m" << num1 + num2 << "\x1b[0m";
+	cout << "ÐžÑ‚Ð²ÐµÑ‚: " << num1 << " + " << num2 << " = " << "\x1b[92m" << num1 + num2 << "\x1b[0m";
 	return choise;
 }
 
 float difference(float num1, float num2, int choise) {
-	cout << "Îòâåò: " << num1 << " - " << num2 << " = " << "\x1b[92m" << num1 - num2 << "\x1b[0m";
+	cout << "ÐžÑ‚Ð²ÐµÑ‚: " << num1 << " - " << num2 << " = " << "\x1b[92m" << num1 - num2 << "\x1b[0m";
 	return choise;
 }
 
 float multiplication(float num1, float num2, int choise) {
-	cout << "Îòâåò: " << num1 << " * " << num2 << " = " << "\x1b[92m" << num1 * num2 << "\x1b[0m";
+	cout << "ÐžÑ‚Ð²ÐµÑ‚: " << num1 << " * " << num2 << " = " << "\x1b[92m" << num1 * num2 << "\x1b[0m";
 	return choise;
 }
 float division(float num1, float num2, int choise) {
-	cout << "Îòâåò: " << num1 << " / " << num2 << " = " << "\x1b[92m" << num1 / num2 << "\x1b[0m";
+	cout << "ÐžÑ‚Ð²ÐµÑ‚: " << num1 << " / " << num2 << " = " << "\x1b[92m" << num1 / num2 << "\x1b[0m";
 	return choise;
 }
 
 float SquareOfSumAB(float num1, float num2, int choise) {
-	cout << "Îòâåò: (" << num1 << " + " << num2 << ")^2 = " << "\x1b[92m" << (num1 + num2) * (num1 + num2) << "\x1b[0m";
+	cout << "ÐžÑ‚Ð²ÐµÑ‚: (" << num1 << " + " << num2 << ")^2 = " << "\x1b[92m" << (num1 + num2) * (num1 + num2) << "\x1b[0m";
 	return choise;
 }
 
 float legOfTriangle(float num1, float num2, int choise) {
-	cout << "Îòâåò: êîðåíü(" << num1 << "^2 - " << num2 << "^2) = " << "\x1b[92m" << sqrt(num1 * num1 - num2 * num2) << "\x1b[0m";
+	cout << "ÐžÑ‚Ð²ÐµÑ‚: ÐºÐ¾Ñ€ÐµÐ½ÑŒ(" << num1 << "^2 - " << num2 << "^2) = " << "\x1b[92m" << sqrt(num1 * num1 - num2 * num2) << "\x1b[0m";
 	return choise;
 }
 
 float hypotenuse(float num1, float num2, int choise) {
-	cout << "Îòâåò: êîðåíü(" << num1 << "^2 + " << num2 << "^2) = " << "\x1b[92m" << sqrt(num1 * num1 + num2 * num2) << "\x1b[0m";
+	cout << "ÐžÑ‚Ð²ÐµÑ‚: ÐºÐ¾Ñ€ÐµÐ½ÑŒ(" << num1 << "^2 + " << num2 << "^2) = " << "\x1b[92m" << sqrt(num1 * num1 + num2 * num2) << "\x1b[0m";
 	return choise;
 }
 float factorial(int num1, int choise) {
@@ -39,13 +39,13 @@ float factorial(int num1, int choise) {
 	for (int i = 2; i <= num1; i++) {
 		result = result * i;
 	}
-	cout << "Îòâåò: !" << num1 << " = " << "\x1b[92m" << result << "\x1b[0m";
+	cout << "ÐžÑ‚Ð²ÐµÑ‚: !" << num1 << " = " << "\x1b[92m" << result << "\x1b[0m";
 	return choise;
 }
 int getCorrectChoise1() {
 	while (true)
 	{
-		cout << "Âûáåðèòå äåéñòâèå: ";
+		cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ: ";
 		int choise;
 		cin >> choise;
 
@@ -62,7 +62,7 @@ int getCorrectChoise1() {
 float getCorrectNum() {
 	while (true)
 	{
-		cout << "Ââåäèòå êîððåêòíîå ÷èñëî: ";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: ";
 		float num;
 		cin >> num;
 
@@ -80,7 +80,7 @@ float getCorrectNum() {
 float getCorrectZero() {
 	while (true)
 	{
-		cout << "Ââåäèòå êîððåêòíîå ÷èñëî: ";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: ";
 		float num;
 		cin >> num;
 
@@ -96,17 +96,17 @@ float getCorrectZero() {
 }
 int main() {
 	setlocale(0, "");
-	cout << "[+]Êàëüêóëÿòîð\n==================================\n\n[1] +\n[2] -\n[3] *\n[4] /\n[5] (a+b)^2\n";
-	cout << "[6] Êàòåò ïðÿìîóãîëüíîãî òðåóãîëüíèêà\n[7] Ãèïîòåíóçà ïðÿìîóãîëüíîãî òðåóãîëüíèêà\n[8]Ôàêòîðèàë";
+	cout << "[+]ÐšÐ°Ð»ÑŒÐºÑƒÐ»ÑÑ‚Ð¾Ñ€\n==================================\n\n[1] +\n[2] -\n[3] *\n[4] /\n[5] (a+b)^2\n";
+	cout << "[6] ÐšÐ°Ñ‚ÐµÑ‚ Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¾Ð³Ð¾ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ°\n[7] Ð“Ð¸Ð¿Ð¾Ñ‚ÐµÐ½ÑƒÐ·Ð° Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¾Ð³Ð¾ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ°\n[8]Ð¤Ð°ÐºÑ‚Ð¾Ñ€Ð¸Ð°Ð»";
 	cout << "\n==================================\n";
 	int choise = getCorrectChoise1();
 	switch (choise)
 	{
 	case 1: {
-		cout << "Ââåäèòå äâà ÷èñëà:\nÏåðâîå ÷èñëî: \n";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð²Ð° Ñ‡Ð¸ÑÐ»Ð°:\nÐŸÐµÑ€Ð²Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: \n";
 		float num1 = getCorrectNum();
 
-		cout << "Âòîðîå ÷èñëî: \n";
+		cout << "Ð’Ñ‚Ð¾Ñ€Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: \n";
 		float num2 = getCorrectNum();
 		sum(num1, num2, choise);
 		break;
@@ -114,65 +114,65 @@ int main() {
 	case 2: {
 		float num1 = getCorrectNum();
 
-		cout << "Âòîðîå ÷èñëî: \n";
+		cout << "Ð’Ñ‚Ð¾Ñ€Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: \n";
 		float num2 = getCorrectNum();
 		difference(num1, num2, choise);
 		break;
 	}
 	case 3: {
-		cout << "Ââåäèòå äâà ÷èñëà:\nÏåðâîå ÷èñëî: \n";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð²Ð° Ñ‡Ð¸ÑÐ»Ð°:\nÐŸÐµÑ€Ð²Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: \n";
 		float num1 = getCorrectNum();
 
-		cout << "Âòîðîå ÷èñëî: \n";
+		cout << "Ð’Ñ‚Ð¾Ñ€Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: \n";
 		float num2 = getCorrectNum();
 		multiplication(num1, num2, choise);
 		break;
 	}
 	case 4: {
-		cout << "Ââåäèòå äâà ÷èñëà:\nÏåðâîå ÷èñëî: \n";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð²Ð° Ñ‡Ð¸ÑÐ»Ð°:\nÐŸÐµÑ€Ð²Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: \n";
 		float num1 = getCorrectNum();
 
-		cout << "Âòîðîå ÷èñëî: \n";
+		cout << "Ð’Ñ‚Ð¾Ñ€Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: \n";
 		float num2 = getCorrectZero();
 		division(num1, num2, choise);
 		break;
 	}
 	case 5: {
-		cout << "Ââåäèòå äâà ÷èñëà:\nÏåðâîå ÷èñëî: \n";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð²Ð° Ñ‡Ð¸ÑÐ»Ð°:\nÐŸÐµÑ€Ð²Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: \n";
 		float num1 = getCorrectNum();
 
-		cout << "Âòîðîå ÷èñëî: \n";
+		cout << "Ð’Ñ‚Ð¾Ñ€Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: \n";
 		float num2 = getCorrectNum();
 		SquareOfSumAB(num1, num2, choise);
 		break;
 	}
 	case 6: {
-		cout << "Ââåäèòå äâà ÷èñëà:\nÄëèíà ãèïîòåíóçû: \n";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð²Ð° Ñ‡Ð¸ÑÐ»Ð°:\nÐ”Ð»Ð¸Ð½Ð° Ð³Ð¸Ð¿Ð¾Ñ‚ÐµÐ½ÑƒÐ·Ñ‹: \n";
 		float num1 = getCorrectZero();
 
-		cout << "Äëèíà ïåðâîãî êàòåòà: \n";
+		cout << "Ð”Ð»Ð¸Ð½Ð° Ð¿ÐµÑ€Ð²Ð¾Ð³Ð¾ ÐºÐ°Ñ‚ÐµÑ‚Ð°: \n";
 		float num2 = getCorrectZero();
 		legOfTriangle(num1, num2, choise);
 
 
 	}
 	case 7: {
-		cout << "Ââåäèòå äâà ÷èñëà:\nÄëèíà ïåðâîãî êàòåòà: \n";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð²Ð° Ñ‡Ð¸ÑÐ»Ð°:\nÐ”Ð»Ð¸Ð½Ð° Ð¿ÐµÑ€Ð²Ð¾Ð³Ð¾ ÐºÐ°Ñ‚ÐµÑ‚Ð°: \n";
 		float num1 = getCorrectZero();
 
-		cout << "Äëèíà âòîðîãî êàòåòà: \n";
+		cout << "Ð”Ð»Ð¸Ð½Ð° Ð²Ñ‚Ð¾Ñ€Ð¾Ð³Ð¾ ÐºÐ°Ñ‚ÐµÑ‚Ð°: \n";
 		float num2 = getCorrectZero();
 		hypotenuse(num1, num2, choise);
 		break;
 	}
 	case 8: {
-		cout << "Ââåäèòå ÷èñëî:\n \n";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¾:\n \n";
 		int num1 = getCorrectNum();
 		factorial(num1, choise);
 		break;
 	}
 	default:
-		cout << "Ïðîâåðüòå çíà÷åíèå è ïîâòîðèòå ïîïûòêó";
+		cout << "ÐŸÑ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð¸ Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚Ðµ Ð¿Ð¾Ð¿Ñ‹Ñ‚ÐºÑƒ";
 		break;
 	}
 	return 0;

@@ -3,11 +3,11 @@ using namespace std;
 
 int clearTerminal() {
 	system("cls");
-	cout << "\n[0] Ãëàâíîå ìåíþ\n";
+	cout << "\n[0] Ð“Ð»Ð°Ð²Ð½Ð¾Ðµ Ð¼ÐµÐ½ÑŽ\n";
 	int choise;
 	while (true)
 	{
-		cout << "Âûáåðèòå äåéñòâèå: ";
+		cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ: ";
 		cin >> choise;
 
 		if (choise != 0 || cin.fail())
@@ -90,11 +90,11 @@ int changeBackgroundColor(int backChoise) {
 		break;
 	}
 	}
-	cout << "\n[0] Ãëàâíîå ìåíþ\n";
+	cout << "\n[0] Ð“Ð»Ð°Ð²Ð½Ð¾Ðµ Ð¼ÐµÐ½ÑŽ\n";
 	int choise;
 	while (true)
 	{
-		cout << "Âûáåðèòå äåéñòâèå: ";
+		cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ: ";
 		cin >> choise;
 
 		if (choise != 0 || cin.fail())
@@ -177,11 +177,11 @@ int changeFontColor(int fontChoise) {
 		break;
 	}
 	}
-	cout << "\n[0] Ãëàâíîå ìåíþ\n";
+	cout << "\n[0] Ð“Ð»Ð°Ð²Ð½Ð¾Ðµ Ð¼ÐµÐ½ÑŽ\n";
 	int choise;
 	while (true)
 	{
-		cout << "Âûáåðèòå äåéñòâèå: ";
+		cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ: ";
 		cin >> choise;
 
 		if (choise != 0 || cin.fail())
@@ -196,11 +196,11 @@ int changeFontColor(int fontChoise) {
 
 int getSizeOfInt() {
 	cout << sizeof(int);
-	cout << "\n[0] Ãëàâíîå ìåíþ\n";
+	cout << "\n[0] Ð“Ð»Ð°Ð²Ð½Ð¾Ðµ Ð¼ÐµÐ½ÑŽ\n";
 	int choise;
 	while (true)
 	{
-		cout << "Âûáåðèòå äåéñòâèå: ";
+		cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ: ";
 		cin >> choise;
 
 		if (choise != 0 || cin.fail())
@@ -215,11 +215,11 @@ int getSizeOfInt() {
 
 int getSizeOfChar() {
 	cout << sizeof(char);
-	cout << "\n[0] Ãëàâíîå ìåíþ\n";
+	cout << "\n[0] Ð“Ð»Ð°Ð²Ð½Ð¾Ðµ Ð¼ÐµÐ½ÑŽ\n";
 	int choise;
 	while (true)
 	{
-		cout << "Âûáåðèòå äåéñòâèå: ";
+		cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ: ";
 		cin >> choise;
 
 		if (choise != 0 || cin.fail())
@@ -234,11 +234,11 @@ int getSizeOfChar() {
 
 int getSizeOfDouble() {
 	cout << sizeof(double);
-	cout << "\n[0] Ãëàâíîå ìåíþ\n";
+	cout << "\n[0] Ð“Ð»Ð°Ð²Ð½Ð¾Ðµ Ð¼ÐµÐ½ÑŽ\n";
 	int choise;
 	while (true)
 	{
-		cout << "Âûáåðèòå äåéñòâèå: ";
+		cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ: ";
 		cin >> choise;
 
 		if (choise != 0 || cin.fail())
@@ -253,11 +253,11 @@ int getSizeOfDouble() {
 
 int getSizeOfFloat() {
 	cout << sizeof(float);
-	cout << "\n[0] Ãëàâíîå ìåíþ\n";
+	cout << "\n[0] Ð“Ð»Ð°Ð²Ð½Ð¾Ðµ Ð¼ÐµÐ½ÑŽ\n";
 	int choise;
 	while (true)
 	{
-		cout << "Âûáåðèòå äåéñòâèå: ";
+		cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ: ";
 		cin >> choise;
 
 		if (choise != 0 || cin.fail())
@@ -272,11 +272,11 @@ int getSizeOfFloat() {
 
 int getSizeOfBool() {
 	cout << sizeof(bool);
-	cout << "\n[0] Ãëàâíîå ìåíþ\n";
+	cout << "\n[0] Ð“Ð»Ð°Ð²Ð½Ð¾Ðµ Ð¼ÐµÐ½ÑŽ\n";
 	int choise;
 	while (true)
 	{
-		cout << "Âûáåðèòå äåéñòâèå: ";
+		cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ: ";
 		cin >> choise;
 
 		if (choise != 0 || cin.fail())
@@ -291,12 +291,12 @@ int getSizeOfBool() {
 }
 
 int showMessage() {
-	cout << "Ïðèâåò, ÿ Ôóíêöèÿ";
-	cout << "\n[0] Ãëàâíîå ìåíþ\n";
+	cout << "ÐŸÑ€Ð¸Ð²ÐµÑ‚, Ñ Ð¤ÑƒÐ½ÐºÑ†Ð¸Ñ";
+	cout << "\n[0] Ð“Ð»Ð°Ð²Ð½Ð¾Ðµ Ð¼ÐµÐ½ÑŽ\n";
 	int choise;
 	while (true)
 	{
-		cout << "Âûáåðèòå äåéñòâèå: ";
+		cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ: ";
 		cin >> choise;
 
 		if (choise != 0 || cin.fail())
@@ -315,11 +315,11 @@ int showSquare() {
 	cout << "# # # # #\n";
 	cout << "# # # # #\n";
 	cout << "# # # # #\n";
-	cout << "\n[0] Ãëàâíîå ìåíþ\n";
+	cout << "\n[0] Ð“Ð»Ð°Ð²Ð½Ð¾Ðµ Ð¼ÐµÐ½ÑŽ\n";
 	int choise;
 	while (true)
 	{
-		cout << "Âûáåðèòå äåéñòâèå: ";
+		cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ: ";
 		cin >> choise;
 
 		if (choise != 0 || cin.fail())
@@ -336,7 +336,7 @@ int showSquare() {
 int getCorrectChoise() {
 	while (true)
 	{
-		cout << "Âûáåðèòå äåéñòâèå: ";
+		cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ: ";
 		int choise;
 		cin >> choise;
 
@@ -352,7 +352,7 @@ int getCorrectChoise() {
 int getCorrectColor() {
 	while (true)
 	{
-		cout << "Âûáåðèòå öâåò: ";
+		cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ñ†Ð²ÐµÑ‚: ";
 		int choise;
 		cin >> choise;
 
@@ -371,11 +371,11 @@ int getCorrectColor() {
 int main() {
 	setlocale(0, "");
 
-	cout << "[+]Ïðîãðàììà - “Ôóíêöèè”\n===============================================\n";
-	cout << "[1] Î÷èùåíèå êîíñîëè\n[2] Èçìåíèòü öâåò ôîíà êîíñîëè\n[3] Èçìåíèòü öâåò òåêñòà êîíñîëè\n";
-	cout << "[4] Âûâåñòè ðàçìåð òèïà äàííûõ INT\n[5] Âûâåñòè ðàçìåð òèïà äàííûõ CHAR\n[6] Âûâåñòè ðàçìåð òèïà äàííûõ DOUBLE\n";
-	cout << "[7] Âûâåñòè ðàçìåð òèïà äàííûõ FLOAT\n[8] Âûâåñòè ðàçìåð òèïà äàííûõ BOOL\n[9] Âûâåñòè ñîîáùåíèå \"Ïðèâåò, ÿ ôóíêöèÿ\"\n";
-	cout << "[10] Âûâåñòè êâàäðàò 5õ5\n[0] Âûõîä\n";
+	cout << "[+]ÐŸÑ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ð° - â€œÐ¤ÑƒÐ½ÐºÑ†Ð¸Ð¸â€\n===============================================\n";
+	cout << "[1] ÐžÑ‡Ð¸Ñ‰ÐµÐ½Ð¸Ðµ ÐºÐ¾Ð½ÑÐ¾Ð»Ð¸\n[2] Ð˜Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ Ñ†Ð²ÐµÑ‚ Ñ„Ð¾Ð½Ð° ÐºÐ¾Ð½ÑÐ¾Ð»Ð¸\n[3] Ð˜Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ Ñ†Ð²ÐµÑ‚ Ñ‚ÐµÐºÑÑ‚Ð° ÐºÐ¾Ð½ÑÐ¾Ð»Ð¸\n";
+	cout << "[4] Ð’Ñ‹Ð²ÐµÑÑ‚Ð¸ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ñ‚Ð¸Ð¿Ð° Ð´Ð°Ð½Ð½Ñ‹Ñ… INT\n[5] Ð’Ñ‹Ð²ÐµÑÑ‚Ð¸ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ñ‚Ð¸Ð¿Ð° Ð´Ð°Ð½Ð½Ñ‹Ñ… CHAR\n[6] Ð’Ñ‹Ð²ÐµÑÑ‚Ð¸ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ñ‚Ð¸Ð¿Ð° Ð´Ð°Ð½Ð½Ñ‹Ñ… DOUBLE\n";
+	cout << "[7] Ð’Ñ‹Ð²ÐµÑÑ‚Ð¸ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ñ‚Ð¸Ð¿Ð° Ð´Ð°Ð½Ð½Ñ‹Ñ… FLOAT\n[8] Ð’Ñ‹Ð²ÐµÑÑ‚Ð¸ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ñ‚Ð¸Ð¿Ð° Ð´Ð°Ð½Ð½Ñ‹Ñ… BOOL\n[9] Ð’Ñ‹Ð²ÐµÑÑ‚Ð¸ ÑÐ¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ðµ \"ÐŸÑ€Ð¸Ð²ÐµÑ‚, Ñ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ñ\"\n";
+	cout << "[10] Ð’Ñ‹Ð²ÐµÑÑ‚Ð¸ ÐºÐ²Ð°Ð´Ñ€Ð°Ñ‚ 5Ñ…5\n[0] Ð’Ñ‹Ñ…Ð¾Ð´\n";
 	cout << "===============================================\n";
 
 	int choise = getCorrectChoise();
@@ -393,14 +393,14 @@ int main() {
 	}
 	case 2: {
 		system("cls");
-		cout << "0 = ×åðíûé 8 = Ñåðûé\n";
-		cout << "1 = Ñèíèé 9 = Ñâåòëî - ñèíèé\n";
-		cout << "2 = Çåëåíûé 10 = Ñâåòëî - çåëåíûé\n";
-		cout << "3 = Ãîëóáîé 11 = Ñâåòëî - ãîëóáîé\n";
-		cout << "4 = Êðàñíûé 12 = Ñâåòëî - êðàñíûé\n";
-		cout << "5 = Ëèëîâûé 13 = Ñâåòëî - ëèëîâûé\n";
-		cout << "6 = Æåëòûé 14 = Ñâåòëî - æåëòûé\n";
-		cout << "7 = Áåëûé 15 = ßðêî - áåëûé\n";
+		cout << "0 = Ð§ÐµÑ€Ð½Ñ‹Ð¹ 8 = Ð¡ÐµÑ€Ñ‹Ð¹\n";
+		cout << "1 = Ð¡Ð¸Ð½Ð¸Ð¹ 9 = Ð¡Ð²ÐµÑ‚Ð»Ð¾ - ÑÐ¸Ð½Ð¸Ð¹\n";
+		cout << "2 = Ð—ÐµÐ»ÐµÐ½Ñ‹Ð¹ 10 = Ð¡Ð²ÐµÑ‚Ð»Ð¾ - Ð·ÐµÐ»ÐµÐ½Ñ‹Ð¹\n";
+		cout << "3 = Ð“Ð¾Ð»ÑƒÐ±Ð¾Ð¹ 11 = Ð¡Ð²ÐµÑ‚Ð»Ð¾ - Ð³Ð¾Ð»ÑƒÐ±Ð¾Ð¹\n";
+		cout << "4 = ÐšÑ€Ð°ÑÐ½Ñ‹Ð¹ 12 = Ð¡Ð²ÐµÑ‚Ð»Ð¾ - ÐºÑ€Ð°ÑÐ½Ñ‹Ð¹\n";
+		cout << "5 = Ð›Ð¸Ð»Ð¾Ð²Ñ‹Ð¹ 13 = Ð¡Ð²ÐµÑ‚Ð»Ð¾ - Ð»Ð¸Ð»Ð¾Ð²Ñ‹Ð¹\n";
+		cout << "6 = Ð–ÐµÐ»Ñ‚Ñ‹Ð¹ 14 = Ð¡Ð²ÐµÑ‚Ð»Ð¾ - Ð¶ÐµÐ»Ñ‚Ñ‹Ð¹\n";
+		cout << "7 = Ð‘ÐµÐ»Ñ‹Ð¹ 15 = Ð¯Ñ€ÐºÐ¾ - Ð±ÐµÐ»Ñ‹Ð¹\n";
 		int backChoise = getCorrectColor();
 		int returnedValue = changeBackgroundColor(backChoise);
 		if (returnedValue == 0) {
@@ -411,14 +411,14 @@ int main() {
 	}
 	case 3: {
 		system("cls");
-		cout << "0 = ×åðíûé 8 = Ñåðûé\n";
-		cout << "1 = Ñèíèé 9 = Ñâåòëî - ñèíèé\n";
-		cout << "2 = Çåëåíûé 10 = Ñâåòëî - çåëåíûé\n";
-		cout << "3 = Ãîëóáîé 11 = Ñâåòëî - ãîëóáîé\n";
-		cout << "4 = Êðàñíûé 12 = Ñâåòëî - êðàñíûé\n";
-		cout << "5 = Ëèëîâûé 13 = Ñâåòëî - ëèëîâûé\n";
-		cout << "6 = Æåëòûé 14 = Ñâåòëî - æåëòûé\n";
-		cout << "7 = Áåëûé 15 = ßðêî - áåëûé\n";
+		cout << "0 = Ð§ÐµÑ€Ð½Ñ‹Ð¹ 8 = Ð¡ÐµÑ€Ñ‹Ð¹\n";
+		cout << "1 = Ð¡Ð¸Ð½Ð¸Ð¹ 9 = Ð¡Ð²ÐµÑ‚Ð»Ð¾ - ÑÐ¸Ð½Ð¸Ð¹\n";
+		cout << "2 = Ð—ÐµÐ»ÐµÐ½Ñ‹Ð¹ 10 = Ð¡Ð²ÐµÑ‚Ð»Ð¾ - Ð·ÐµÐ»ÐµÐ½Ñ‹Ð¹\n";
+		cout << "3 = Ð“Ð¾Ð»ÑƒÐ±Ð¾Ð¹ 11 = Ð¡Ð²ÐµÑ‚Ð»Ð¾ - Ð³Ð¾Ð»ÑƒÐ±Ð¾Ð¹\n";
+		cout << "4 = ÐšÑ€Ð°ÑÐ½Ñ‹Ð¹ 12 = Ð¡Ð²ÐµÑ‚Ð»Ð¾ - ÐºÑ€Ð°ÑÐ½Ñ‹Ð¹\n";
+		cout << "5 = Ð›Ð¸Ð»Ð¾Ð²Ñ‹Ð¹ 13 = Ð¡Ð²ÐµÑ‚Ð»Ð¾ - Ð»Ð¸Ð»Ð¾Ð²Ñ‹Ð¹\n";
+		cout << "6 = Ð–ÐµÐ»Ñ‚Ñ‹Ð¹ 14 = Ð¡Ð²ÐµÑ‚Ð»Ð¾ - Ð¶ÐµÐ»Ñ‚Ñ‹Ð¹\n";
+		cout << "7 = Ð‘ÐµÐ»Ñ‹Ð¹ 15 = Ð¯Ñ€ÐºÐ¾ - Ð±ÐµÐ»Ñ‹Ð¹\n";
 		int fontChoise = getCorrectColor();
 		int returnedValue = changeFontColor(fontChoise);
 		if (returnedValue == 0) {
@@ -428,7 +428,7 @@ int main() {
 		break;
 	}
 	case 4: {
-		cout << "Îòâåò: ";
+		cout << "ÐžÑ‚Ð²ÐµÑ‚: ";
 		int returnedValue = getSizeOfInt();
 		if (returnedValue == 0) {
 			system("cls");
@@ -437,7 +437,7 @@ int main() {
 		break;
 	}
 	case 5: {
-		cout << "Îòâåò: ";
+		cout << "ÐžÑ‚Ð²ÐµÑ‚: ";
 		int returnedValue = getSizeOfChar();
 		if (returnedValue == 0) {
 			system("cls");
@@ -446,7 +446,7 @@ int main() {
 		break;
 	}
 	case 6: {
-		cout << "Îòâåò: ";
+		cout << "ÐžÑ‚Ð²ÐµÑ‚: ";
 		int returnedValue = getSizeOfDouble();
 		if (returnedValue == 0) {
 			system("cls");
@@ -455,7 +455,7 @@ int main() {
 		break;
 	}
 	case 7: {
-		cout << "Îòâåò: ";
+		cout << "ÐžÑ‚Ð²ÐµÑ‚: ";
 		int returnedValue = getSizeOfFloat();
 		if (returnedValue == 0) {
 			system("cls");
@@ -464,7 +464,7 @@ int main() {
 		break;
 	}
 	case 8: {
-		cout << "Îòâåò: ";
+		cout << "ÐžÑ‚Ð²ÐµÑ‚: ";
 		int returnedValue = getSizeOfBool();
 		if (returnedValue == 0) {
 			system("cls");
@@ -473,7 +473,7 @@ int main() {
 		break;
 	}
 	case 9: {
-		cout << "Îòâåò: ";
+		cout << "ÐžÑ‚Ð²ÐµÑ‚: ";
 		int returnedValue = showMessage();
 		if (returnedValue == 0) {
 			system("cls");
@@ -482,7 +482,7 @@ int main() {
 		break;
 	}
 	case 10: {
-		cout << "Îòâåò:\n";
+		cout << "ÐžÑ‚Ð²ÐµÑ‚:\n";
 		int returnedValue = showSquare();
 		if (returnedValue == 0) {
 			system("cls");
@@ -491,7 +491,7 @@ int main() {
 		break;
 	}
 	default: {
-		cout << "Ïðîâåðüòå çíà÷åíèå è ïîâòîðèòå ïîïûòêó" << endl;
+		cout << "ÐŸÑ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð¸ Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚Ðµ Ð¿Ð¾Ð¿Ñ‹Ñ‚ÐºÑƒ" << endl;
 	}
 	}
 
