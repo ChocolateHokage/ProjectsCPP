@@ -1,29 +1,40 @@
 #include <iostream>
-
 using namespace std;
-//если 1 ход - пк - проверяет массив на наличие 0 и ставит х в свободное поле (поле обновляется со значением массива) 
-// массив объявляется глобально  
-//  
-// 
-// 
-// 
-// 
-//Настройки запуска игры
+
 int crossColor = 0;
 int roundelColor = 0;
 int firstMove = 2;
 string firstMovestr = "Player";
-int sizeField = 1;
+string lustMovestr = "PC";
+int sizeField = 3;
 string sizeFieldstr = "3 X 3";
 int arrField3[9]{};
 int arrField4[16]{};
 int arrField5[25]{};
 // 1 - O
 // 3 - X
+// 0 - index
+
+int checkWinner(int arr[],int sizeField) {
+	for (int i = 0; i < sizeField-2; i+=sizeField) {
+		for (int j = 0; j < sizeField; j++) {
+			if ((arr[i + j] == 3 && arr[i + (j + 1)] == 3 && arr[i + (j + 2)] == 3) || (arr[(i + sizeField) + j] == 3 && arr[(i + (sizeField*2)) + j] == 3 && arr[i + j] == 3) || (arr[i + j] == 3 && arr[(i + sizeField) + (j + 1)]==3 && arr[(i + (sizeField*2)) + (j + 2)]==3)) {
+				return 3;
+			}
+			else if ((arr[i + j] == 1 && arr[i + (j + 1)] == 1 && arr[i + (j + 2)] == 1) || (arr[(i + sizeField) + j] == 1 && arr[(i + (sizeField*2)) + j] == 1 && arr[i + j] == 1) || (arr[i + j] == 1 && arr[(i + sizeField) + (j + 1)] == 1 && arr[(i + (sizeField*2)) + (j + 2)] == 1)) {
+				return 1;
+			}
+			else {
+				return 0;
+			}
+		}
+	}
+}
+
 //нарисовать поле
 int getField(int sizeField) {
 	switch (sizeField) {
-	case 1: {
+	case 3: {
 		system("cls");
 		for (int i = 1; i <= 9; i++) {
 			if (arrField3[i - 1] == 1) {
@@ -45,7 +56,7 @@ int getField(int sizeField) {
 		}
 		break;
 	}
-	case 2: {
+	case 4: {
 		system("cls");
 		for (int i = 1; i <= 16; i++) {
 			if (i < 10) {
@@ -61,10 +72,9 @@ int getField(int sizeField) {
 				cout << "|";
 			}
 		}
-		system("PAUSE");
 		break;
 	}
-	case 3: {
+	case 5: {
 		system("cls");
 		for (int i = 1; i <= 25; i++) {
 			if (i < 10) {
@@ -80,7 +90,6 @@ int getField(int sizeField) {
 				cout << "|";
 			}
 		}
-		system("PAUSE");
 		break;
 	}
 	default:
@@ -139,6 +148,7 @@ int getPCStep(int arrSize, int arr[], int stepIcon) {
 
 	return 0;
 }
+
 int getPlayerStep(int arrSize, int arr[], int stepIcon) {
 	bool freeSpace = 0;
 	while (freeSpace == 0) {
@@ -169,30 +179,85 @@ int startGame() {
 	if (gameModeChoise == 1) {
 		getField(sizeField);
 		if (firstMove == 1) {
-			for (int i = 1; i <= 9; i++) {
+			for (int i = 1; i <= 5; i++) {
 				getPCStep(9, arrField3, 3);
+				int winner = checkWinner(arrField3, sizeField);
+				if (winner==3){
+					cout << "\n===================================\nПобедил: " << firstMovestr;
+					return 0;
+				}
+				else if (winner == 1) {
+					cout << "\n===================================\nПобедил: " << lustMovestr;
+					return 0;
+				}
+				if(i<=4)
 				getPlayerStep(9, arrField3, 1);
+				winner = checkWinner(arrField3, sizeField);
+				if (winner == 3) {
+					cout << "\n===================================\nПобедил: " << firstMovestr;
+					return 0;
+				}
+				else if (winner == 1) {
+					cout << "\n===================================\nПобедил: " << lustMovestr;
+					return 0;
+				}
 			}
 		}
 		else if (firstMove == 2) {
-			for (int i = 1; i <= 9; i++) {
-				getPlayerStep(9, arrField3, 3);
-				getPCStep(9, arrField3, 1);
+			for (int i = 1; i <= (sizeField * sizeField + 1) / 2; i++) {
+				getPCStep(sizeField*sizeField, arrField3, 3);
+				int winner = checkWinner(arrField3, sizeField);
+				if (winner == 3) {
+					cout << "\n===================================\nПобедил: " << firstMovestr;
+				}
+				else if (winner == 1) {
+					cout << "\n===================================\nПобедил: " << lustMovestr;
+				}
+				getPlayerStep(sizeField * sizeField, arrField3, 1);
+				winner = checkWinner(arrField3, sizeField);
+				if (winner == 3) {
+					cout << "\n===================================\nПобедил: " << firstMovestr;
+				}
+				else if (winner == 1) {
+					cout << "\n===================================\nПобедил: " << lustMovestr;
+				}
+				cout << "[1]Начать заново";
+				cout << "[2]В меню";
+				int endGameChoise;
+				cin >> endGameChoise;
+				if (endGameChoise == 1) {
+					startGame();
+				}
+				else if (endGameChoise == 2) {
+					return 0;
+				}
 			}
 		}
 	}
 	else if (gameModeChoise == 2) {
 		getField(sizeField);
-		switch (sizeField) {
-		case 1: {
-			int arrField3[3][3];
-		}
-		case 2: {
-			int arrField4[4][4];
-		}
-		case 3: {
-			int arrField5[5][5];
-		}
+		for (int i = 1; i <= (sizeField*sizeField+1)/2; i++) {
+			getPCStep(sizeField * sizeField, arrField3, 3);
+			int winner = checkWinner(arrField3, sizeField);
+			if (winner == 3) {
+				cout << "\n===================================\nПобедил: " << firstMovestr;
+				return 0;
+			}
+			else if (winner == 1) {
+				cout << "\n===================================\nПобедил: " << lustMovestr;
+				return 0;
+			}
+			if (i <= sizeField * sizeField / 2)
+				getPlayerStep(sizeField * sizeField, arrField3, 1);
+			winner = checkWinner(arrField3, sizeField);
+			if (winner == 3) {
+				cout << "\n===================================\nПобедил: " << firstMovestr;
+				return 0;
+			}
+			else if (winner == 1) {
+				cout << "\n===================================\nПобедил: " << lustMovestr;
+				return 0;
+			}
 		}
 	}
 	else if (gameModeChoise == 0) {
@@ -265,11 +330,13 @@ int whoseFirstmove() {
 	cin >> firstMoveChoise;
 	if (firstMoveChoise == 1) {
 		firstMovestr = "PC";
+		lustMovestr = "Player";
 		firstMove = 1;
 		whoseFirstmove();
 	}
 	else if (firstMoveChoise == 2) {
 		firstMovestr = "Player";
+		lustMovestr = "PC";
 		firstMove = 2;
 		whoseFirstmove();
 	}
@@ -295,19 +362,19 @@ int getSizeField() {
 	{
 	case 1: {
 		sizeFieldstr = "3 X 3";
-		sizeField = 1;
+		sizeField = 3;
 		getSizeField();
 		break;
 	}
 	case 2: {
 		sizeFieldstr = "4 X 4";
-		sizeField = 2;
+		sizeField = 4;
 		getSizeField();
 		break;
 	}
 	case 3: {
 		sizeFieldstr = "5 X 5";
-		sizeField = 3;
+		sizeField = 5;
 		getSizeField();
 		break;
 	}
