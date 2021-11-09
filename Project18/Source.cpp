@@ -24,12 +24,25 @@ int checkWinner(int arr[], int sizeField) {
 			else if ((arr[i + j] == 1 && arr[i + (j + 1)] == 1 && arr[i + (j + 2)] == 1) || (arr[(i + sizeField) + j] == 1 && arr[(i + (sizeField * 2)) + j] == 1 && arr[i + j] == 1) || (arr[i + j] == 1 && arr[(i + sizeField) + (j + 1)] == 1 && arr[(i + (sizeField * 2)) + (j + 2)] == 1)) {
 				return 1;
 			}
-			else {
-				return 2;
-			}
 		}
 	}
-	return 0;
+	bool freeSpace = 0;
+	for (int i = 0; i < sizeField * sizeField; i++) {
+		if (arr[i] == 0) {
+			freeSpace = 1;
+			break;
+		}
+		else if (arr[i] != 0)
+		{
+			freeSpace = 0;
+		}
+	}
+	if (freeSpace) {
+		return 0;
+	}
+	else if (!freeSpace) {
+		return 2;
+	}
 }
 
 //нарисовать поле
@@ -217,7 +230,8 @@ int startGame() {
 			getField(3);
 			//если первый ход ПК
 			if (firstMove == 1) {
-				for (int i = 1; i <= 9; i++) {
+				int i = 1;
+				while (i <= 9) {
 					getPCStep(9, arrField3, 3);
 					int winner = checkWinner(arrField3, 3);
 					//если победил крестик
@@ -240,6 +254,7 @@ int startGame() {
 							return 0;
 						}
 					}
+					//если ничья
 					else if (winner == 2) {
 						cout << "\n===================================\nУвы, Ничья ";
 						if (getEndGameMenu() == 1) {
@@ -270,12 +285,22 @@ int startGame() {
 							return 0;
 						}
 					}
+					//если ничья
+					else if (winner == 2) {
+						cout << "\n===================================\nУвы, Ничья ";
+						if (getEndGameMenu() == 1) {
+							startGame();
+						}
+						else if (getEndGameMenu() == 0) {
+							return 0;
+						}
+					}
 				}
 			}
 			//если первый ход игрока
 			else if (firstMove == 2) {
 				for (int i = 1; i <= (sizeField * sizeField + 1) / 2; i++) {
-					getPCStep(sizeField * sizeField, arrField3, 3);
+					getPlayerStep(sizeField * sizeField, arrField3, 3);
 					int winner = checkWinner(arrField3, sizeField);
 					if (winner == 3) {
 						cout << "\n===================================\nПобедил: " << firstMovestr;
@@ -295,7 +320,16 @@ int startGame() {
 							return 0;
 						}
 					}
-					getPlayerStep(sizeField * sizeField, arrField3, 1);
+					else if (winner == 2) {
+						cout << "\n===================================\nУвы, Ничья ";
+						if (getEndGameMenu() == 1) {
+							startGame();
+						}
+						else if (getEndGameMenu() == 0) {
+							return 0;
+						}
+					}
+					getPCStep(sizeField * sizeField, arrField3, 1);
 					winner = checkWinner(arrField3, sizeField);
 					if (winner == 3) {
 						cout << "\n===================================\nПобедил: " << firstMovestr;
@@ -308,6 +342,15 @@ int startGame() {
 					}
 					else if (winner == 1) {
 						cout << "\n===================================\nПобедил: " << lustMovestr;
+						if (getEndGameMenu() == 1) {
+							startGame();
+						}
+						else if (getEndGameMenu() == 0) {
+							return 0;
+						}
+					}
+					else if (winner == 2) {
+						cout << "\n===================================\nУвы, Ничья ";
 						if (getEndGameMenu() == 1) {
 							startGame();
 						}
