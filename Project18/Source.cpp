@@ -24,9 +24,6 @@ int checkWinner(int arr[],int sizeField) {
 			else if ((arr[i + j] == 1 && arr[i + (j + 1)] == 1 && arr[i + (j + 2)] == 1) || (arr[(i + sizeField) + j] == 1 && arr[(i + (sizeField*2)) + j] == 1 && arr[i + j] == 1) || (arr[i + j] == 1 && arr[(i + sizeField) + (j + 1)] == 1 && arr[(i + (sizeField*2)) + (j + 2)] == 1)) {
 				return 1;
 			}
-			else {
-				
-			}
 		}
 	}
 	return 0;

@@ -1,0 +1,9 @@
+﻿  Source.cpp
+C:\Users\Админ\Desktop\CPP\Project18\Source.cpp(100): warning C4715: getField: значение возвращается не при всех путях выполнения
+C:\Users\Админ\Desktop\CPP\Project18\Source.cpp(187): warning C4715: getEndGameMenu: значение возвращается не при всех путях выполнения
+C:\Users\Админ\Desktop\CPP\Project18\Source.cpp(370): warning C4715: getCrossColors: значение возвращается не при всех путях выполнения
+C:\Users\Админ\Desktop\CPP\Project18\Source.cpp(394): warning C4715: getRoundelColors: значение возвращается не при всех путях выполнения
+C:\Users\Админ\Desktop\CPP\Project18\Source.cpp(423): warning C4715: whoseFirstmove: значение возвращается не при всех путях выполнения
+C:\Users\Админ\Desktop\CPP\Project18\Source.cpp(344): warning C4715: startGame: значение возвращается не при всех путях выполнения
+C:\Users\Админ\Desktop\CPP\Project18\Source.cpp(521): warning C4715: setting: значение возвращается не при всех путях выполнения
+  Project18.vcxproj -> C:\Users\Админ\Desktop\CPP\Project18\Debug\Project18.exe
