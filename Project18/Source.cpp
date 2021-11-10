@@ -11,12 +11,13 @@ string sizeFieldstr = "3 X 3";
 int arrField3[9]{};
 int arrField4[16]{};
 int arrField5[25]{};
+int icon = 3;
 // 1 - O
 // 3 - X
 // 0 - index
 
 int checkWinner(int arr[], int sizeField) {
-	for (int i = 0; i < sizeField - 2; i += sizeField) {
+	for (int i = 0; i < sizeField*sizeField; i += sizeField) {
 		for (int j = 0; j < sizeField; j++) {
 			if ((arr[i + j] == 3 && arr[i + (j + 1)] == 3 && arr[i + (j + 2)] == 3) || (arr[(i + sizeField) + j] == 3 && arr[(i + (sizeField * 2)) + j] == 3 && arr[i + j] == 3) || (arr[i + j] == 3 && arr[(i + sizeField) + (j + 1)] == 3 && arr[(i + (sizeField * 2)) + (j + 2)] == 3)) {
 				return 3;
@@ -25,7 +26,6 @@ int checkWinner(int arr[], int sizeField) {
 				return 1;
 			}
 			else if (j > 1 && i <= sizeField * (sizeField - 2)) {
-				//j=2 i=0
 				if (arr[i + j] == 3 && arr[i + sizeField + j - 1] == 3 && arr[i + sizeField * 2 + j - 2] == 3) {
 					return 3;
 				}
@@ -858,7 +858,7 @@ int startGame() {
 					}
 				}
 				if (i <= sizeField * sizeField / 2)
-					getPlayerStep(sizeField * sizeField, arrField5, 1);
+				getPlayerStep(sizeField * sizeField, arrField5, 1);
 				getField(sizeField);
 				winner = checkWinner(arrField5, sizeField);
 				if (winner == 3) {
