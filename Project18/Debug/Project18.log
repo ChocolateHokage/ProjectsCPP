@@ -1,10 +1,11 @@
 ﻿  Source.cpp
-C:\Users\Админ\Desktop\CPP\Project18\Source.cpp(55): warning C4715: checkWinner: значение возвращается не при всех путях выполнения
-C:\Users\Админ\Desktop\CPP\Project18\Source.cpp(136): warning C4715: getField: значение возвращается не при всех путях выполнения
-C:\Users\Админ\Desktop\CPP\Project18\Source.cpp(224): warning C4715: getEndGameMenu: значение возвращается не при всех путях выполнения
-C:\Users\Админ\Desktop\CPP\Project18\Source.cpp(926): warning C4715: getCrossColors: значение возвращается не при всех путях выполнения
-C:\Users\Админ\Desktop\CPP\Project18\Source.cpp(950): warning C4715: getRoundelColors: значение возвращается не при всех путях выполнения
-C:\Users\Админ\Desktop\CPP\Project18\Source.cpp(979): warning C4715: whoseFirstmove: значение возвращается не при всех путях выполнения
-C:\Users\Админ\Desktop\CPP\Project18\Source.cpp(1077): warning C4715: setting: значение возвращается не при всех путях выполнения
-C:\Users\Админ\Desktop\CPP\Project18\Source.cpp(900): warning C4715: startGame: значение возвращается не при всех путях выполнения
+C:\Users\Админ\Desktop\CPP\Project18\Source.cpp(70): warning C4715: checkWinner: значение возвращается не при всех путях выполнения
+C:\Users\Админ\Desktop\CPP\Project18\Source.cpp(150): warning C4715: getField: значение возвращается не при всех путях выполнения
+C:\Users\Админ\Desktop\CPP\Project18\Source.cpp(254): warning C4715: getEndGameMenu: значение возвращается не при всех путях выполнения
+C:\Users\Админ\Desktop\CPP\Project18\Source.cpp(407): warning C4715: startGame: значение возвращается не при всех путях выполнения
+C:\Users\Админ\Desktop\CPP\Project18\Source.cpp(373): warning C4715: a: значение возвращается не при всех путях выполнения
+C:\Users\Админ\Desktop\CPP\Project18\Source.cpp(429): warning C4715: getCrossColors: значение возвращается не при всех путях выполнения
+C:\Users\Админ\Desktop\CPP\Project18\Source.cpp(449): warning C4715: getRoundelColors: значение возвращается не при всех путях выполнения
+C:\Users\Админ\Desktop\CPP\Project18\Source.cpp(476): warning C4715: whoseFirstmove: значение возвращается не при всех путях выполнения
+C:\Users\Админ\Desktop\CPP\Project18\Source.cpp(566): warning C4715: setting: значение возвращается не при всех путях выполнения
   Project18.vcxproj -> C:\Users\Админ\Desktop\CPP\Project18\Debug\Project18.exe
