@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 using namespace std;
 
 int crossColor = 0;
@@ -14,7 +14,7 @@ int arrField5[25]{};
 
 int getCorrectChoise(int bEdge, int tEdge, int sItem) {
 	while (true) {
-		cout << "\nВведите ваш выбор: ";
+		cout << "\nР’РІРµРґРёС‚Рµ РІР°С€ РІС‹Р±РѕСЂ: ";
 		int choise;
 		cin >> choise;
 		if ((cin.fail() || choise < bEdge || choise > tEdge) && choise != sItem) {
@@ -69,7 +69,7 @@ int checkWinner(int arr[], int sizeField) {
 	}
 }
 
-//нарисовать поле
+//РЅР°СЂРёСЃРѕРІР°С‚СЊ РїРѕР»Рµ
 int getField(int sizeField) {
 	switch (sizeField) {
 	case 3: {
@@ -148,10 +148,10 @@ int getField(int sizeField) {
 		break;
 	}
 }
-//Одиночная/два игрока
+//РћРґРёРЅРѕС‡РЅР°СЏ/РґРІР° РёРіСЂРѕРєР°
 int getGameMode() {
 	system("cls");
-	cout << "[+]Game Mode\n==============================\n[1]Одиночная\n[2]Два игрока\n[0]Назад\n==============================";
+	cout << "[+]Game Mode\n==============================\n[1]РћРґРёРЅРѕС‡РЅР°СЏ\n[2]Р”РІР° РёРіСЂРѕРєР°\n[0]РќР°Р·Р°Рґ\n==============================";
 	int gameModeChoise = getCorrectChoise(0, 2, 0);
 	switch (gameModeChoise)
 	{
@@ -211,7 +211,7 @@ int getPlayerStep(int arrSize, int arr[], int stepIcon) {
 int getEndGameMenu(int winner) {
 	switch (winner) {
 	case 3: {
-		cout << "\n===================================\nПобедил: " << firstMovestr << "\n[1]Начать заново\n[2]В меню\n";
+		cout << "\n===================================\nРџРѕР±РµРґРёР»: " << firstMovestr << "\n[1]РќР°С‡Р°С‚СЊ Р·Р°РЅРѕРІРѕ\n[2]Р’ РјРµРЅСЋ\n";
 		int endGameChoise = getCorrectChoise(1, 2, 0);
 		if (endGameChoise == 1) {
 			return 1;
@@ -222,7 +222,7 @@ int getEndGameMenu(int winner) {
 		break;
 	}
 	case 1: {
-		cout << "\n===================================\nПобедил: " << lustMovestr << "\n[1]Начать заново\n[2]В меню\n";
+		cout << "\n===================================\nРџРѕР±РµРґРёР»: " << lustMovestr << "\n[1]РќР°С‡Р°С‚СЊ Р·Р°РЅРѕРІРѕ\n[2]Р’ РјРµРЅСЋ\n";
 		int endGameChoise = getCorrectChoise(1, 2, 0);
 		if (endGameChoise == 1) {
 			return 1;
@@ -233,7 +233,7 @@ int getEndGameMenu(int winner) {
 		break;
 	}
 	case 2: {
-		cout << "\n===================================\nУвы, Ничья\n[1]Начать заново\n[2]В меню\n";
+		cout << "\n===================================\nРЈРІС‹, РќРёС‡СЊСЏ\n[1]РќР°С‡Р°С‚СЊ Р·Р°РЅРѕРІРѕ\n[2]Р’ РјРµРЅСЋ\n";
 		int endGameChoise = getCorrectChoise(1, 2, 0);
 		if (endGameChoise == 1) {
 			return 1;
@@ -263,7 +263,7 @@ int nullifyArray(int arr[], int size) {
 int a(int gameModeChoise, int arr[]) {
 	if (gameModeChoise == 1) {
 		getField(sizeField);
-		//если первый ход ПК
+		//РµСЃР»Рё РїРµСЂРІС‹Р№ С…РѕРґ РџРљ
 		if (firstMove == 1) {
 			firstMovestr = "PC";
 			lustMovestr = "Player";
@@ -297,7 +297,7 @@ int a(int gameModeChoise, int arr[]) {
 				}
 			}
 		}
-		//если первый ход игрока
+		//РµСЃР»Рё РїРµСЂРІС‹Р№ С…РѕРґ РёРіСЂРѕРєР°
 		else if (firstMove == 2) {
 			firstMovestr = "Player";
 			lustMovestr = "PC";
@@ -332,7 +332,7 @@ int a(int gameModeChoise, int arr[]) {
 			}
 		}
 	}
-	//если два игрока 
+	//РµСЃР»Рё РґРІР° РёРіСЂРѕРєР° 
 	else if (gameModeChoise == 2) {
 		firstMovestr = "Player1";
 		lustMovestr = "Player2";
@@ -372,15 +372,15 @@ int a(int gameModeChoise, int arr[]) {
 	}
 }
 
-//начать игру
+//РЅР°С‡Р°С‚СЊ РёРіСЂСѓ
 int startGame() {
 	int gameModeChoise = getGameMode();
 	nullifyArray(arrField3, sizeField * sizeField);
 	nullifyArray(arrField4, sizeField * sizeField);
 	nullifyArray(arrField5, sizeField * sizeField);
-	//если 3х3
+	//РµСЃР»Рё 3С…3
 	if (sizeField == 3) {
-		//если одиночная игра
+		//РµСЃР»Рё РѕРґРёРЅРѕС‡РЅР°СЏ РёРіСЂР°
 		if (a(gameModeChoise, arrField3) == 1) {
 			return 1;
 		}
@@ -406,7 +406,7 @@ int startGame() {
 	}
 }
 
-//Выбор цвета
+//Р’С‹Р±РѕСЂ С†РІРµС‚Р°
 int getCrossColors() {
 	system("cls");
 	cout << "[+]Colors" << endl;
@@ -415,7 +415,7 @@ int getCrossColors() {
 		cout << i << " = \x1b[" << i << "m Cross_Color \x1b[0m" << endl;
 	}
 	cout << "==============================" << endl;
-	cout << "[0]Назад" << endl;
+	cout << "[0]РќР°Р·Р°Рґ" << endl;
 	cout << "==============================" << endl;
 	cout << "\x1b[" << crossColor << "m Cross_Color \x1b[0m";
 	int colorsChoise = getCorrectChoise(89, 97, 0);
@@ -435,7 +435,7 @@ int getRoundelColors() {
 		cout << i << " = \x1b[" << i << "m Roundel_Color \x1b[0m" << endl;
 	}
 	cout << "==============================" << endl;
-	cout << "[0]Назад" << endl;
+	cout << "[0]РќР°Р·Р°Рґ" << endl;
 	cout << "==============================" << endl;
 	cout << "\x1b[" << roundelColor << "m Roundel_Color \x1b[0m";
 	int colorsChoise = getCorrectChoise(89, 97, 0);
@@ -448,14 +448,14 @@ int getRoundelColors() {
 	}
 }
 
-//кто первый ходит
+//РєС‚Рѕ РїРµСЂРІС‹Р№ С…РѕРґРёС‚
 int whoseFirstmove() {
 	system("cls");
-	cout << "[+]Очередность хода(only for single mode)" << endl;
+	cout << "[+]РћС‡РµСЂРµРґРЅРѕСЃС‚СЊ С…РѕРґР°(only for single mode)" << endl;
 	cout << "===============================" << endl;
-	cout << "[1]PC начинает" << endl;
-	cout << "[2]Игрок начинает" << endl;
-	cout << "[0]Назад" << endl;
+	cout << "[1]PC РЅР°С‡РёРЅР°РµС‚" << endl;
+	cout << "[2]РРіСЂРѕРє РЅР°С‡РёРЅР°РµС‚" << endl;
+	cout << "[0]РќР°Р·Р°Рґ" << endl;
 	cout << "===============================";
 	int firstMoveChoise = getCorrectChoise(0, 2, 0);
 	if (firstMoveChoise == 1) {
@@ -475,15 +475,15 @@ int whoseFirstmove() {
 	}
 }
 
-//Размер поля
+//Р Р°Р·РјРµСЂ РїРѕР»СЏ
 int getSizeField() {
 	system("cls");
-	cout << "[+]Размер поля" << endl;
+	cout << "[+]Р Р°Р·РјРµСЂ РїРѕР»СЏ" << endl;
 	cout << "==============================" << endl;
 	cout << "[1] 3 X 3   " << endl;
 	cout << "[2] 4 X 4   " << endl;
 	cout << "[3] 5 X 5   " << endl;
-	cout << "[0]Назад" << endl;
+	cout << "[0]РќР°Р·Р°Рґ" << endl;
 	cout << "==============================";
 	int sizeFieldChoise = getCorrectChoise(0, 3, 0);
 	switch (sizeFieldChoise)
@@ -515,35 +515,35 @@ int getSizeField() {
 	}
 	return 0;
 }
-//Настройки
+//РќР°СЃС‚СЂРѕР№РєРё
 int setting() {
 	system("cls");
 	cout << "[+]Setting" << endl;
 	cout << "==============================" << endl;
-	cout << "[1]\x1b[" << crossColor << "mЦвет крестика \x1b[0m" << endl;
-	cout << "[2]\x1b[" << roundelColor << "mЦвет нолика \x1b[0m" << endl;
-	cout << "[3]Кто ходит первым  < \x1b[7m" << firstMovestr << "\x1b[0m >" << endl;
-	cout << "[4]Размер поля       < \x1b[7m" << sizeFieldstr << "\x1b[0m >" << endl;
-	cout << "[5]Меню" << endl;
+	cout << "[1]\x1b[" << crossColor << "mР¦РІРµС‚ РєСЂРµСЃС‚РёРєР° \x1b[0m" << endl;
+	cout << "[2]\x1b[" << roundelColor << "mР¦РІРµС‚ РЅРѕР»РёРєР° \x1b[0m" << endl;
+	cout << "[3]РљС‚Рѕ С…РѕРґРёС‚ РїРµСЂРІС‹Рј  < \x1b[7m" << firstMovestr << "\x1b[0m >" << endl;
+	cout << "[4]Р Р°Р·РјРµСЂ РїРѕР»СЏ       < \x1b[7m" << sizeFieldstr << "\x1b[0m >" << endl;
+	cout << "[5]РњРµРЅСЋ" << endl;
 	cout << "==============================";
 	int settingChoise = getCorrectChoise(1, 5, 5);
 	switch (settingChoise)
 	{
-		//Цвет крестика
+		//Р¦РІРµС‚ РєСЂРµСЃС‚РёРєР°
 	case 1: {
 		getCrossColors();
 		system("cls");
 		setting();
 		break;
 	}
-		  //цвет нолика
+		  //С†РІРµС‚ РЅРѕР»РёРєР°
 	case 2: {
 		getRoundelColors();
 		system("cls");
 		setting();
 		break;
 	}
-		  //Кто первый ходит
+		  //РљС‚Рѕ РїРµСЂРІС‹Р№ С…РѕРґРёС‚
 	case 3: {
 		whoseFirstmove();
 		system("cls");
@@ -565,21 +565,21 @@ int setting() {
 	}
 }
 
-//Правила
+//РџСЂР°РІРёР»Р°
 int getRules() {
 	system("cls");
-	cout << "[+]Правила" << endl;
+	cout << "[+]РџСЂР°РІРёР»Р°" << endl;
 	cout << "========================================================================================================================" << endl;
-	cout << "Крестики-нолики — логическая игра между двумя противниками на квадратном поле 3 на 3 клетки или большего размера" << endl;
-	cout << "(вплоть до «бесконечного поля»).Один из игроков играет «крестиками», второй — «ноликами».В традиционной китайской" << endl;
-	cout << "игре используются черные и белые камни." << endl;
-	cout << "Игроки по очереди ставят на свободные клетки поля 3х3 знаки(один всегда крестики, другой всегда нолики). Первый, " << endl;
-	cout << "выстроивший в ряд 3 своих фигур по вертикали, горизонтали или диагонали, выигрывает.Первый ход делает игрок, " << endl;
-	cout << "ставящий крестики." << endl;
-	cout << "Обычно по завершении партии выигравшая сторона зачёркивает чертой свои три знака(нолика или крестика), " << endl;
-	cout << "составляющих сплошной ряд." << endl;
+	cout << "РљСЂРµСЃС‚РёРєРё-РЅРѕР»РёРєРё вЂ” Р»РѕРіРёС‡РµСЃРєР°СЏ РёРіСЂР° РјРµР¶РґСѓ РґРІСѓРјСЏ РїСЂРѕС‚РёРІРЅРёРєР°РјРё РЅР° РєРІР°РґСЂР°С‚РЅРѕРј РїРѕР»Рµ 3 РЅР° 3 РєР»РµС‚РєРё РёР»Рё Р±РѕР»СЊС€РµРіРѕ СЂР°Р·РјРµСЂР°" << endl;
+	cout << "(РІРїР»РѕС‚СЊ РґРѕ В«Р±РµСЃРєРѕРЅРµС‡РЅРѕРіРѕ РїРѕР»СЏВ»).РћРґРёРЅ РёР· РёРіСЂРѕРєРѕРІ РёРіСЂР°РµС‚ В«РєСЂРµСЃС‚РёРєР°РјРёВ», РІС‚РѕСЂРѕР№ вЂ” В«РЅРѕР»РёРєР°РјРёВ».Р’ С‚СЂР°РґРёС†РёРѕРЅРЅРѕР№ РєРёС‚Р°Р№СЃРєРѕР№" << endl;
+	cout << "РёРіСЂРµ РёСЃРїРѕР»СЊР·СѓСЋС‚СЃСЏ С‡РµСЂРЅС‹Рµ Рё Р±РµР»С‹Рµ РєР°РјРЅРё." << endl;
+	cout << "РРіСЂРѕРєРё РїРѕ РѕС‡РµСЂРµРґРё СЃС‚Р°РІСЏС‚ РЅР° СЃРІРѕР±РѕРґРЅС‹Рµ РєР»РµС‚РєРё РїРѕР»СЏ 3С…3 Р·РЅР°РєРё(РѕРґРёРЅ РІСЃРµРіРґР° РєСЂРµСЃС‚РёРєРё, РґСЂСѓРіРѕР№ РІСЃРµРіРґР° РЅРѕР»РёРєРё). РџРµСЂРІС‹Р№, " << endl;
+	cout << "РІС‹СЃС‚СЂРѕРёРІС€РёР№ РІ СЂСЏРґ 3 СЃРІРѕРёС… С„РёРіСѓСЂ РїРѕ РІРµСЂС‚РёРєР°Р»Рё, РіРѕСЂРёР·РѕРЅС‚Р°Р»Рё РёР»Рё РґРёР°РіРѕРЅР°Р»Рё, РІС‹РёРіСЂС‹РІР°РµС‚.РџРµСЂРІС‹Р№ С…РѕРґ РґРµР»Р°РµС‚ РёРіСЂРѕРє, " << endl;
+	cout << "СЃС‚Р°РІСЏС‰РёР№ РєСЂРµСЃС‚РёРєРё." << endl;
+	cout << "РћР±С‹С‡РЅРѕ РїРѕ Р·Р°РІРµСЂС€РµРЅРёРё РїР°СЂС‚РёРё РІС‹РёРіСЂР°РІС€Р°СЏ СЃС‚РѕСЂРѕРЅР° Р·Р°С‡С‘СЂРєРёРІР°РµС‚ С‡РµСЂС‚РѕР№ СЃРІРѕРё С‚СЂРё Р·РЅР°РєР°(РЅРѕР»РёРєР° РёР»Рё РєСЂРµСЃС‚РёРєР°), " << endl;
+	cout << "СЃРѕСЃС‚Р°РІР»СЏСЋС‰РёС… СЃРїР»РѕС€РЅРѕР№ СЂСЏРґ." << endl;
 	cout << "========================================================================================================================" << endl;
-	cout << "[0]Меню";
+	cout << "[0]РњРµРЅСЋ";
 	getCorrectChoise(0, 0, 0);
 	return 0;
 }
@@ -587,12 +587,12 @@ int getRules() {
 int main() {
 	setlocale(0, "");
 	//menu
-	cout << "[+]Меню" << endl;
+	cout << "[+]РњРµРЅСЋ" << endl;
 	cout << "==============================" << endl;
-	cout << "[1]Начать игру" << endl;
-	cout << "[2]Настройки" << endl;
-	cout << "[3]Правила" << endl;
-	cout << "[4]Выйти" << endl;
+	cout << "[1]РќР°С‡Р°С‚СЊ РёРіСЂСѓ" << endl;
+	cout << "[2]РќР°СЃС‚СЂРѕР№РєРё" << endl;
+	cout << "[3]РџСЂР°РІРёР»Р°" << endl;
+	cout << "[4]Р’С‹Р№С‚Рё" << endl;
 	cout << "==============================";
 	int menuChoise = getCorrectChoise(1, 4, 1);
 	switch (menuChoise)
@@ -619,11 +619,11 @@ int main() {
 	}
 	default:
 		system("cls");
-		cout << "Вы точно хотите выйти? (Y/N)" << endl;
+		cout << "Р’С‹ С‚РѕС‡РЅРѕ С…РѕС‚РёС‚Рµ РІС‹Р№С‚Рё? (Y/N)" << endl;
 		char quit;
 		while (true)
 		{
-			cout << "Введите ваш выбор: ";
+			cout << "Р’РІРµРґРёС‚Рµ РІР°С€ РІС‹Р±РѕСЂ: ";
 			cin >> quit;
 			if (cin.fail() || (quit != 'Y' && quit != 'y' && quit != 'N' && quit != 'n'))
 			{
