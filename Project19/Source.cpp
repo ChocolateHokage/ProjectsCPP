@@ -15,6 +15,7 @@ int qAmount = 10;
 int corrAnsAmount = 0;
 int pointsAmount = 0;
 bool endFlag = 1;
+bool endFlagTime = 1;
 short x;
 short y;
 
@@ -133,10 +134,10 @@ void getAnswers(int i, bool isHint) {
 }
 
 void getEndInfo(int gHint) {
-	cout << "Отвечено правильно: \x1b[92m" << corrAnsAmount << "/" << qAmount << "\x1b[0m\nИспользовано подсказок \x1b[92m" << hint - gHint << "/" << hint << "\x1b[0m\nКоличество набранных баллов: " << pointsAmount << endl;
+	cout << "Отвечено правильно: \x1b[92m" << corrAnsAmount << "/" << qAmount << "\x1b[0m\nИспользовано подсказок \x1b[92m" << hint - gHint << "/" << hint << "\n\x1b[0mКоличество набранных баллов : " << pointsAmount << endl;
 }
 
-void setTimer() {
+void setTimer(int time) {
 	COORD output;
 	output.X = 0;
 	output.Y = 0;
@@ -145,76 +146,83 @@ void setTimer() {
 	input1.Y = y;
 	CONSOLE_CURSOR_INFO cursorinfo;
 	Sleep(150);
-	while (totalTime > 0) {
+	while (time >= 0 && endFlag) {
 		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), output);
 		cursorinfo.bVisible = false;
-		if (totalTime % 60 < 10) {
-			cout << "" << totalTime / 60 << ":0" << totalTime % 60;
+		if (time % 60 < 10) {
+			cout << "" << time / 60 << ":0" << time % 60;
 		}
 		else {
-			cout << "" << totalTime / 60 << ":" << totalTime % 60;
+			cout << "" << time / 60 << ":" << time % 60;
 		}
 		gotoxy(x, y);
 		Sleep(1000);
-		totalTime--;
+
+		if (time == 0) {
+			endFlagTime = 0;
+			return;
+		}
+		time--;
 	}
-	return;
 }
 
 int startQuiz() {
-	thread t(setTimer);
+	thread t(setTimer, totalTime);
 	int lifesInt = lifes;
 	int gHint = hint;
+	endFlag = 1;
 	corrAnsAmount = 0;
+	endFlagTime = 1;
 	setRandom(arrQue, 15);
-	while (totalTime > 0 && endFlag) {
-		for (int i = 1; i <= qAmount; i++) {
-			system("cls");
-			if (lifesInt > 0) {
-				setRandom(arrAns, 4);
+	for (int i = 1; i <= qAmount && endFlagTime && endFlag; i++) {
+		system("cls");
+		if (lifesInt > 0) {
+			setRandom(arrAns, 4);
+			getAnswers(i, 0);
+			int choise = getCorrectChoise(1, 4, 5);
+			if (choise == 5 && gHint > 0) {
+				gHint--;
+				system("cls");
+				cout << "\nИспользована подсказка. Осталось: " << gHint << endl;
+				getAnswers(i, 1);
+				choise = getCorrectChoise(1, 4, 5);
+			}
+			else if (choise == 5 && gHint < 1) {
+				system("cls");
+				cout << "\nУ вас не осталось подсказок " << endl;
 				getAnswers(i, 0);
-				int choise = getCorrectChoise(1, 4, 5);
-				if (choise == 5 && gHint > 0) {
-					gHint--;
-					system("cls");
-					cout << "\nИспользована подсказка. Осталось: " << gHint << endl;
-					getAnswers(i, 1);
-					choise = getCorrectChoise(1, 4, 5);
-				}
-				else if (choise == 5 && gHint < 1) {
-					system("cls");
-					cout << "\nУ вас не осталось подсказок " << endl;
-					getAnswers(i, 0);
-					choise = getCorrectChoise(1, 4, 4);
-				}
-				if (quiz[arrQue[i - 1] - 1][arrAns[choise - 1]] == quiz[arrQue[i - 1] - 1][5]) {
-					pointsAmount++;
-					cout << "\n\x1b[92mПравильно!!!\x1b[0m\nКоличество очков: " << pointsAmount;
-					corrAnsAmount++;
-				}
-				else {
-					lifesInt--;
-					cout << "\n\x1b[91mНеверно!!!\x1b[0m";
-				}
-				cout << "\n==================\n";
-				Sleep(400);
+				choise = getCorrectChoise(1, 4, 4);
+			}
+			if (quiz[arrQue[i - 1] - 1][arrAns[choise - 1]] == quiz[arrQue[i - 1] - 1][5]) {
+				pointsAmount++;
+				cout << "\n\x1b[92mПравильно!!!\x1b[0m\nКоличество очков: " << pointsAmount;
+				corrAnsAmount++;
 			}
 			else {
-				cout << "Вы ошиблись максимальное количество раз. Игра закончена\n";
-				endFlag = 0;
-				getEndInfo(gHint);
-				system("PAUSE");
-				return 0;
+				lifesInt--;
+				cout << "\n\x1b[91mНеверно!!!\x1b[0m";
 			}
+			cout << "\n==================\n";
+			Sleep(400);
 		}
-		endFlag = 0;
-		getEndInfo(gHint);
-		system("PAUSE");
-		return 0;
+		else {
+			cout << "Вы ошиблись максимальное количество раз. Игра закончена\n";
+			endFlag = 0;
+			getEndInfo(gHint);
+			system("PAUSE");
+			t.detach();
+			return 0;
+		}
+	}
+	if (endFlagTime == 0) {
+		cout << "\x1b[95mВремя вышло\n\x1b[0m";
+	}
+	else {
+		cout << "\x1b[95mВы ответили на все вопросы\n\x1b[0m";
 	}
 	getEndInfo(gHint);
-	endFlag = 0;
 	system("pause");
+	t.detach();
 	return 0;
 }
 
@@ -258,7 +266,7 @@ void getHint() {
 }
 void getTime() {
 	system("cls");
-	cout << "[#] \x1b[4mВремя на викторину\x1b[0m\n\n\x1b[32m0\x1b[0m - < \x1b[92m" << totalTime << "\x1b[0m > - \x1b[32m15\x1b[0m" << endl;
+	cout << "[#] \x1b[4mВремя на викторину\x1b[0m\n\n\x1b[32m0\x1b[0m - < \x1b[92m" << totalTime / 60 << "\x1b[0m > - \x1b[32m15\x1b[0m" << endl;
 	cout << "==============================\n";
 	cout << "Выбор происходит путем введения времени в минутах от 1 до 15 включительно\n";
 	totalTime = getCorrectChoise(1, 15, 0) * 60;
@@ -270,7 +278,7 @@ int setting() {
 	cout << "\x1b[32m[1]\x1b[0mКоличество вопросов		|  < \x1b[1m" << qAmount << "\x1b[0m >" << endl;
 	cout << "\x1b[32m[2]\x1b[0mКоличество прав на ошибку	|  < \x1b[1m" << lifes << "\x1b[0m > " << endl;
 	cout << "\x1b[32m[3]\x1b[0mКоличество подсказок 50/50	|  < \x1b[1m" << hint << "\x1b[0m >" << endl;
-	cout << "\x1b[32m[4]\x1b[0mВремя на викторину		|  < \x1b[1m" << totalTime << "\x1b[0m >" << endl;
+	cout << "\x1b[32m[4]\x1b[0mВремя на викторину		|  < \x1b[1m" << totalTime / 60 << "\x1b[0m >" << endl;
 	cout << "\x1b[32m[5]\x1b[0mМеню" << endl;
 	cout << "==============================" << endl;
 	int settingChoise = getCorrectChoise(1, 5, 1);

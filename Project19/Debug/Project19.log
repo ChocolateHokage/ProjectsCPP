@@ -1,4 +1,4 @@
 ﻿  Source.cpp
-C:\Users\Админ\Desktop\CPP\Project19\Source.cpp(280,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-C:\Users\Админ\Desktop\CPP\Project19\Source.cpp(268): warning C4715: setting: значение возвращается не при всех путях выполнения
+C:\Users\Админ\Desktop\CPP\Project19\Source.cpp(331,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\Админ\Desktop\CPP\Project19\Source.cpp(319): warning C4715: setting: значение возвращается не при всех путях выполнения
   Project19.vcxproj -> C:\Users\Админ\Desktop\CPP\Project19\Debug\Project19.exe
